@@ -1,24 +1,19 @@
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import Dashboard from "./pages/Dashboard";
-import Patients from "./pages/Patients";
-import Doctors from "./pages/Doctors";
-import Appointments from "./pages/Appointments";
+import Home from "./components/Home";
+import Patients from "./components/Patients";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
+     
     <BrowserRouter>
-      <div className="flex">
-        <Sidebar />
-        <div className="p-6 w-full">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/patients" element={<Patients />} />
-            <Route path="/doctors" element={<Doctors />} />
-            <Route path="/appointments" element={<Appointments />} />
-          </Routes>
-        </div>
-      </div>
+     <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/patient" element={<Patients />} />
+        
+      </Routes>
     </BrowserRouter>
   );
 }
